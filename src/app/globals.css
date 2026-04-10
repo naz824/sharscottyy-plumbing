@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../../";
 
 :root {
   --background: #ffffff;
@@ -19,19 +20,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selection highlight */
 ::selection {
   background-color: #ea580c;
   color: white;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
 
-/* Safe area for mobile sticky bar */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
