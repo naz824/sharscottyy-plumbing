@@ -1,0 +1,16 @@
+{
+  "name": "Sharscottyy Plumbing — Miami's Trusted Plumber",
+  "short_name": "Sharscottyy",
+  "description": "Free visits, no dispatch fees. 20 years experience. 24/7 emergency plumbing in Miami-Dade.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
