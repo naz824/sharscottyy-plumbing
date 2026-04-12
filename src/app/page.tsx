@@ -64,6 +64,11 @@ export default function HomePage() {
               <strong className="text-white">completely free</strong>.
             </p>
 
+            <div className="flex items-center gap-2 text-blue-200 text-sm font-medium mb-6">
+              <Clock className="w-4 h-4 text-orange-400" />
+              Average response: under 30 minutes
+            </div>
+
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
               {[
                 { icon: BadgeDollarSign, label: "$0 Dispatch Fee" },
@@ -104,6 +109,14 @@ export default function HomePage() {
           <div className="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none mt-8 lg:mt-0 hidden lg:block">
             <LeadCaptureForm variant="hero" />
           </div>
+        </div>
+      </section>
+
+      {/* SPECIAL OFFER BANNER */}
+      <section className="bg-gradient-to-r from-amber-400 to-orange-400 py-3 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="font-black text-slate-900"><span className="bg-white/30 px-2 py-0.5 rounded mr-2 text-sm">LIMITED TIME</span> Free Drain Camera Inspection with Any Service</p>
+          <a href="tel:7866788138" className="bg-blue-950 text-white px-5 py-1.5 rounded-full font-bold text-sm hover:bg-blue-900">Claim Offer</a>
         </div>
       </section>
 
