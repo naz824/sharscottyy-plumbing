@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X, PhoneCall } from "lucide-react";
+import { MessageCircle, X, PhoneCall, Send } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 
 type Message = {
@@ -19,17 +19,36 @@ const QUICK_REPLIES = [
 ] as const;
 
 const RESPONSES: Record<(typeof QUICK_REPLIES)[number], string> = {
-  "Schedule Free Visit": `Great! Carlos offers completely FREE visits — no dispatch fee, ever. Just call ${BUSINESS.phone} or message on WhatsApp and we'll come to you. Same-day appointments available throughout Miami-Dade.`,
+  "Schedule Free Visit": `I'd love to help! I offer free visits with no dispatch fee anywhere in Miami-Dade. Call or text me at ${BUSINESS.phone}, or message on WhatsApp.`,
   "What Services?":
-    "We handle everything: water heaters, leak detection, drain cleaning, toilet repair, gas lines, bathroom remodels, and 24/7 emergency plumbing. Over 20 years serving Miami-Dade!",
-  "Your Prices": `We charge flat-rate pricing — no surprise hourly fees. Your visit and quote are always FREE. You only pay when you approve the work. We accept Cash, Check, or Zelle. Call ${BUSINESS.phone} for a free quote.`,
-  "Emergency 24/7": `Yes — we're available 24/7 for burst pipes, flooding, sewage backups, and any plumbing emergency. No after-hours surcharge. Call now: ${BUSINESS.phone}`,
-  "Hablamos Español": `¡Sí! Somos completamente bilingüe. Carlos puede atenderle en español desde la primera llamada hasta el final del trabajo. ¡Llámenos al ${BUSINESS.phone}!`,
-  "Payment Methods": `We accept Cash, Check, and Zelle — no credit card fees, no hidden charges. We give you a clear flat-rate quote before starting any work. Questions? Call ${BUSINESS.phone}.`,
+    "I handle water heater repair & install, leak detection, drain cleaning, toilet repair, bathroom remodel plumbing, and 24/7 emergencies. All visits and estimates are free!",
+  "Your Prices": `I use honest flat-rate pricing — no hourly billing, no hidden fees, no dispatch charge. I give you a clear estimate before starting. I work with every budget. Call ${BUSINESS.phone} for a free quote.`,
+  "Emergency 24/7": `For emergencies, call me NOW at ${BUSINESS.phone}. I respond 24/7 — burst pipes, flooding, no hot water. No dispatch fee, even at 2 AM.`,
+  "Hablamos Español": `¡Sí! Soy Carlos Matute. Puede llamarme al ${BUSINESS.phone} o por WhatsApp. Visitas gratis, sin cargo. ¡Estoy listo para ayudarle!`,
+  "Payment Methods": `I accept Cash, Check, and Zelle. No hidden fees or surprise surcharges.`,
 };
 
+const DEFAULT_RESPONSE = `Thanks for reaching out! For the fastest response, call or text me at ${BUSINESS.phone}. I respond within 30 minutes during business hours. All visits are free!`;
+
+function getKeywordResponse(text: string): string {
+  const t = text.toLowerCase();
+  if (t.includes("schedule") || t.includes("free visit"))
+    return RESPONSES["Schedule Free Visit"];
+  if (t.includes("service"))
+    return RESPONSES["What Services?"];
+  if (t.includes("price") || t.includes("cost") || t.includes("how much"))
+    return RESPONSES["Your Prices"];
+  if (t.includes("emergency") || t.includes("urgent") || t.includes("flood"))
+    return RESPONSES["Emergency 24/7"];
+  if (t.includes("español") || t.includes("spanish"))
+    return RESPONSES["Hablamos Español"];
+  if (t.includes("payment") || t.includes("pay") || t.includes("zelle"))
+    return RESPONSES["Payment Methods"];
+  return DEFAULT_RESPONSE;
+}
+
 const INITIAL_MESSAGE =
-  "Hi! I'm Carlos from Sharscottyy Plumbing. I've been fixing Miami's plumbing for over 20 years. How can I help you today?";
+  "Hi! I'm Carlos from Sharscottyy Plumbing. I've been fixing Miami's plumbing for over 20 years. How can I help you today? 🔧";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -37,6 +56,7 @@ export default function ChatWidget() {
     { from: "bot", text: INITIAL_MESSAGE },
   ]);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
+  const [input, setInput] = useState("");
 
   function handleQuickReply(reply: (typeof QUICK_REPLIES)[number]) {
     setMessages((prev) => [
@@ -47,9 +67,22 @@ export default function ChatWidget() {
     setShowQuickReplies(false);
   }
 
+  function handleSend() {
+    const trimmed = input.trim();
+    if (!trimmed) return;
+    setMessages((prev) => [
+      ...prev,
+      { from: "user", text: trimmed },
+      { from: "bot", text: getKeywordResponse(trimmed) },
+    ]);
+    setInput("");
+    setShowQuickReplies(false);
+  }
+
   function handleReset() {
     setMessages([{ from: "bot", text: INITIAL_MESSAGE }]);
     setShowQuickReplies(true);
+    setInput("");
   }
 
   return (
@@ -127,8 +160,27 @@ export default function ChatWidget() {
             )}
           </div>
 
+          {/* Text input */}
+          <div className="px-4 pt-3 pb-2 bg-white border-t border-slate-100 flex gap-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              placeholder="Type a question…"
+              className="flex-1 text-sm border border-slate-200 rounded-xl px-3 py-2 outline-none focus:border-orange-400 font-medium text-slate-700 placeholder:text-slate-400"
+            />
+            <button
+              onClick={handleSend}
+              className="bg-orange-600 hover:bg-orange-500 text-white rounded-xl px-3 py-2 transition-colors"
+              aria-label="Send message"
+            >
+              <Send className="w-4 h-4" />
+            </button>
+          </div>
+
           {/* Call CTA */}
-          <div className="p-4 bg-white border-t border-slate-100">
+          <div className="px-4 pb-4 bg-white">
             <a
               href={`tel:${BUSINESS.phoneRaw}`}
               className="w-full flex items-center justify-center gap-2 bg-orange-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-orange-500 transition-colors shadow-[0_4px_20px_rgba(234,88,12,0.25)]"

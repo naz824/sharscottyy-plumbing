@@ -33,8 +33,7 @@ const ESTIMATES = [
   },
 ];
 
-const MARKET_NOTE =
-  "Miami market average. Carlos offers: Free visit + flat-rate quote. No dispatch fee.";
+const MARKET_NOTE = "Miami-Dade market average";
 
 export default function CostEstimator() {
   return (
@@ -83,7 +82,16 @@ export default function CostEstimator() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-slate-400 font-medium mt-8">
+        <div className="mt-10 bg-blue-950 rounded-2xl px-8 py-6 text-center">
+          <p className="text-white font-bold text-lg leading-relaxed">
+            Carlos offers: Free visit + flat-rate quote. No dispatch fee. No hourly billing.
+          </p>
+          <p className="text-orange-400 font-black text-base mt-2">
+            &ldquo;I work with every budget.&rdquo; — Carlos M.
+          </p>
+        </div>
+
+        <p className="text-center text-sm text-slate-400 font-medium mt-6">
           * Ranges reflect typical Miami market rates. Your actual cost depends
           on the specific job. Carlos provides a free, no-obligation estimate
           after inspection.
