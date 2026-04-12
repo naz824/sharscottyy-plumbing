@@ -41,7 +41,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-blue-950">
         <div className="absolute inset-0 z-0">
-          <ParallaxHeroBackground src="https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg" />
+          <ParallaxHeroBackground src="https://s3-media0.fl.yelpcdn.com/bphoto/IDNXW0e0wruvlEX5x0YQtg/o.jpg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
@@ -393,6 +393,52 @@ export default function HomePage() {
               <Link href="/reviews" className="inline-flex items-center gap-2 bg-blue-950 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-900 active:scale-95 transition-all shadow-lg">
                 See All Reviews <ChevronRight className="w-5 h-5" aria-hidden="true" />
               </Link>
+            </div>
+          </div>
+        </section>
+      </AnimateOnScroll>
+
+      {/* BEFORE & AFTER */}
+      <AnimateOnScroll>
+        <section className="py-24 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="text-orange-600 font-black tracking-widest uppercase mb-3 text-sm">Real Results</p>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-[1.05]">
+                Before &amp; After
+              </h2>
+              <p className="text-slate-600 text-lg font-medium">See the difference Carlos makes on every job.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {[
+                {
+                  before: { id: "OBTtxqU9p2RYc6AsqbG1zw", caption: "Outdoor pipe — water gushing from burst line" },
+                  after: { id: "pazKEFforTXOE49nQe9JDg", caption: "Fully repaired and sealed" },
+                },
+                {
+                  before: { id: "WbLkygjQO_ECZY4WKEgSEg", caption: "Severe drain stoppage & clogging" },
+                  after: { id: "DCMDSC2TgUQ3Il944jSTog", caption: "Clean under-sink with new disposal" },
+                },
+              ].map((pair, i) => (
+                <div key={i} className="grid grid-cols-2 gap-3">
+                  {[
+                    { img: pair.before, label: "BEFORE", labelColor: "bg-red-600" },
+                    { img: pair.after, label: "AFTER", labelColor: "bg-green-600" },
+                  ].map(({ img, label, labelColor }) => (
+                    <div key={label} className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 relative">
+                      <img
+                        src={`https://s3-media0.fl.yelpcdn.com/bphoto/${img.id}/o.jpg`}
+                        alt={img.caption}
+                        className="w-full h-52 object-cover"
+                        loading="lazy"
+                      />
+                      <span className={`absolute top-3 left-3 ${labelColor} text-white text-xs font-black px-3 py-1 rounded-full tracking-wider`}>
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </section>

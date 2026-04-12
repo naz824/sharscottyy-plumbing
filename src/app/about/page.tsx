@@ -43,7 +43,7 @@ export default function AboutPage() {
                 {/* REAL: Sharscottyy family portrait from Yelp */}
                 <img
                   src="https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg"
-                  alt="Carlos Matute Alvarado Sr., owner of Sharscottyy Plumbing"
+                  alt="Professional water heater installation by Carlos at Sharscottyy Plumbing"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -120,6 +120,38 @@ export default function AboutPage() {
                 <value.icon className="w-10 h-10 text-orange-600 mb-4" aria-hidden="true" />
                 <h3 className="text-xl font-black text-slate-900 mb-3">{value.title}</h3>
                 <p className="text-slate-600 leading-relaxed font-medium">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Work Gallery */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-orange-600 font-black tracking-widest uppercase text-sm mb-3">Portfolio</p>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3">Our Work</h2>
+            <p className="text-slate-600 font-medium text-lg">Real photos from real jobs across Miami-Dade.</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { id: "a8PW0eKssQ8U9ZDjPlY5yg", alt: "Rheem water heater installation with vent pipe by Sharscottyy Plumbing" },
+              { id: "IDNXW0e0wruvlEX5x0YQtg", alt: "Rheem Performance water heater replacement Miami" },
+              { id: "H5gTNr3KWRBAugiODSSK2w", alt: "Roman tub faucet replacement by Carlos" },
+              { id: "mWR8RUqNgqQSdndPZPqP3A", alt: "Germany tankless water heater installation" },
+              { id: "DCMDSC2TgUQ3Il944jSTog", alt: "Under-sink plumbing with garbage disposal installation" },
+              { id: "DdLg_dDXz6DGqvrhLZk6Vw", alt: "Service sink replacement with faucet" },
+              { id: "1OgBf04VDJ9RYErf2onhlg", alt: "Tankless water heater wall mount installation" },
+              { id: "pazKEFforTXOE49nQe9JDg", alt: "Outdoor pipe repair completed — Miami-Dade" },
+            ].map((photo) => (
+              <div key={photo.id} className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 aspect-square">
+                <img
+                  src={`https://s3-media0.fl.yelpcdn.com/bphoto/${photo.id}/o.jpg`}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

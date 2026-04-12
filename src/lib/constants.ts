@@ -58,8 +58,8 @@ export const SERVICES = [
     fullDesc: "From sediment buildup caused by Miami's 383 ppm hard water to complete unit replacements, we handle all water heater brands. We install both traditional tank and modern tankless systems, ensuring code-compliant connections and proper pressure relief valve setup.",
     icon: "Flame",
     color: "bg-orange-600",
-    image: "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg",
-    /* REAL: Gas water heater replacement from Carlos's Yelp */
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg",
+    /* REAL: Rheem water heater with vent pipe — bright, professional */
     features: [
       "Traditional & tankless installation",
       "Sediment flush for hard water buildup",
@@ -75,8 +75,8 @@ export const SERVICES = [
     fullDesc: "Hidden leaks in Miami homes cause slab damage, mold growth, and skyrocketing water bills. We use electronic listening devices and thermal imaging to pinpoint leaks behind walls and under slabs without destructive exploration. Early detection saves you thousands.",
     icon: "Droplet",
     color: "bg-blue-600",
-    image: "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg",
-    /* REAL: Broken plumbing/leak from Carlos's Yelp */
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/R_exCjzC7U-n8D2US7dtpg/o.jpg",
+    /* REAL: Angle stop valve leak repairs — cleaner, more professional */
     features: [
       "Non-invasive electronic detection",
       "Slab leak specialists",
@@ -92,8 +92,8 @@ export const SERVICES = [
     fullDesc: "Miami's heavy rains and hurricane season create unique drainage challenges. We clear blockages using motorized snakes and hydro-jetting, and install backflow prevention devices to protect your home during storm season. From kitchen sinks to main sewer lines.",
     icon: "Wrench",
     color: "bg-emerald-500",
-    image: "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg",
-    /* REAL: Stoppages & clogging from Carlos's Yelp */
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/DCMDSC2TgUQ3Il944jSTog/o.jpg",
+    /* REAL: Under-sink plumbing with garbage disposal — bright, clear */
     features: [
       "Motorized snake clearing",
       "Hydro-jetting for tough clogs",
@@ -109,8 +109,8 @@ export const SERVICES = [
     fullDesc: "Running toilets waste thousands of gallons per year. We repair flappers, fill valves, and wax seals, or install brand-new low-flow toilets that save water and money. All work is done cleanly and completed same-day.",
     icon: "Home",
     color: "bg-violet-500",
-    image: "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg",
-    /* REAL: Toilet leak repair from Carlos's Yelp */
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/ua9IArVixmWxPghWkkS-1Q/o.jpg",
+    /* REAL: Toilet leak repairs promo image with professional text overlay */
     features: [
       "Running toilet repairs",
       "Wax seal replacement",
@@ -126,8 +126,8 @@ export const SERVICES = [
     fullDesc: "Planning a bathroom upgrade? We handle all the plumbing — from rough-in piping to final fixture connections. Showers, tubs, vanities, and specialty fixtures like salon backwash chairs. We coordinate with your contractor for seamless results.",
     icon: "Paintbrush",
     color: "bg-sky-500",
-    image: "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg",
-    /* REAL: Kitchen sink remodeling from Carlos's Yelp */
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/H5gTNr3KWRBAugiODSSK2w/o.jpg",
+    /* REAL: Roman tub faucet replacement — bright, clean, professional */
     features: [
       "Complete rough-in plumbing",
       "Shower & tub installation",
