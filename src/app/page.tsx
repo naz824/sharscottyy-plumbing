@@ -9,6 +9,7 @@ import LeadCaptureForm from "@/components/LeadCaptureForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import BackToTop from "@/components/BackToTop";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import CostEstimator from "@/components/CostEstimator";
 import { BUSINESS, SERVICES, TESTIMONIALS, FAQS } from "@/lib/constants";
 import { generateFaqJsonLd } from "@/lib/metadata";
 
@@ -254,6 +255,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      </AnimateOnScroll>
+
+      {/* COST ESTIMATOR */}
+      <AnimateOnScroll>
+        <CostEstimator />
       </AnimateOnScroll>
 
       {/* THE HONEST DIFFERENCE — FIX 2 + FIX 7: Combined trust cards + Us vs. Them */}

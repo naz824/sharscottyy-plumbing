@@ -5,6 +5,7 @@ import EmergencyTicker from "@/components/EmergencyTicker";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
+import ChatWidget from "@/components/ChatWidget";
 import { generateLocalBusinessJsonLd } from "@/lib/metadata";
 import { BUSINESS } from "@/lib/constants";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <MobileStickyBar />
+        <ChatWidget />
       </body>
     </html>
   );

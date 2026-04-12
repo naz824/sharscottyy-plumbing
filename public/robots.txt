@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sharscottyyplumbing.com
+
+# Sitemaps
+Sitemap: https://sharscottyyplumbing.com/sitemap.xml
