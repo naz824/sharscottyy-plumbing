@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* Hero — red accent for emergency page */}
       <section className={`relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden ${service.slug === "emergency" ? "bg-red-950" : "bg-blue-950"}`}>
         <div className="absolute inset-0 z-0">
-          <img src={service.image} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" />
+          <img src={service.images[0]} alt="" className="w-full h-full object-cover opacity-20" aria-hidden="true" />
           <div className={`absolute inset-0 ${service.slug === "emergency" ? "bg-gradient-to-r from-red-950 via-red-950/95 to-red-900/80" : "bg-gradient-to-r from-blue-950 via-blue-950/95 to-blue-900/80"}`} />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -84,7 +84,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
             {/* Photo */}
             <div className="rounded-2xl overflow-hidden mb-8">
-              <img src={service.image} alt={`${service.title} work by ${BUSINESS.name} in Miami`} className="w-full h-72 object-cover" />
+              <img src={service.images[0]} alt={`${service.title} work by ${BUSINESS.name} in Miami`} className="w-full h-72 object-cover" />
             </div>
 
             {/* CTAs */}
