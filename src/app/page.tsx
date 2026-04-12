@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import FaqAccordion from "@/components/FaqAccordion";
+import ImageCarousel from "@/components/ImageCarousel";
 import BackToTop from "@/components/BackToTop";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import CostEstimator from "@/components/CostEstimator";
@@ -228,12 +229,7 @@ export default function HomePage() {
                   <Link key={service.slug} href={`/services/${service.slug}`} className="group">
                     <article className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,112,184,0.12)] hover:-translate-y-1 transition-all duration-500">
                       <div className="h-56 overflow-hidden relative">
-                        <img
-                          src={service.image}
-                          alt={`${service.title} service in Miami by Sharscottyy Plumbing`}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                          loading="lazy"
-                        />
+                        <ImageCarousel images={service.images} />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
                         <div className={`absolute bottom-4 left-6 ${service.color} text-white p-3 rounded-2xl shadow-lg`}>
                           <IconComp className="w-6 h-6" aria-hidden="true" />
@@ -340,6 +336,21 @@ export default function HomePage() {
           </div>
         </section>
       </AnimateOnScroll>
+
+      {/* CARLOS'S PROMISE */}
+      <section className="py-16 bg-blue-950 text-center">
+        <div className="max-w-3xl mx-auto px-4">
+          <img
+            src="https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg"
+            alt="Carlos"
+            className="w-20 h-20 rounded-full mx-auto mb-6 border-4 border-orange-500 object-cover"
+          />
+          <blockquote className="text-2xl md:text-3xl font-black text-white italic leading-relaxed mb-4">
+            &ldquo;I work with every budget. My visit is always free, and I&apos;ll give you an honest quote before I touch a single pipe.&rdquo;
+          </blockquote>
+          <p className="text-orange-400 font-bold">— Carlos Matute, Owner</p>
+        </div>
+      </section>
 
       {/* TESTIMONIALS */}
       <AnimateOnScroll>

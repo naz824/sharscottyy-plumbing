@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PhoneCall, MessageCircle, CheckCircle2, ArrowLeft, Star } from "lucide-react";
 import { SERVICES, BUSINESS } from "@/lib/constants";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import ImageCarousel from "@/components/ImageCarousel";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -82,9 +83,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               ))}
             </ul>
 
-            {/* Photo */}
-            <div className="rounded-2xl overflow-hidden mb-8">
-              <img src={service.image} alt={`${service.title} work by ${BUSINESS.name} in Miami`} className="w-full h-72 object-cover" />
+            {/* Photos */}
+            <div className="rounded-2xl overflow-hidden mb-8 h-72">
+              <ImageCarousel images={service.images} />
             </div>
 
             {/* CTAs */}
