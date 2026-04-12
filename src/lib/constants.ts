@@ -261,8 +261,8 @@ export const FAQS = [
 
 export const COMPETITOR_COMPARISON = [
   { company: "Large National Franchise A", dispatchFee: "$99 – $150", freeEstimate: false },
-  { company: "Large National Franchise B", dispatchFee: "$89 – $130", freeEstimate: false },
-  { company: "Corporate Chain Plumber", dispatchFee: "$99", freeEstimate: false },
-  { company: "Average Miami Plumber", dispatchFee: "$75 – $125", freeEstimate: false },
+  { company: "Major Franchise Plumber", dispatchFee: "$89 – $130", freeEstimate: false },
+  { company: "Big-Box Plumbing Co.", dispatchFee: "$99", freeEstimate: false },
+  { company: "Other Local Plumber", dispatchFee: "$75 – $125", freeEstimate: false },
   { company: "Sharscottyy Plumbing", dispatchFee: "$0 — FREE", freeEstimate: true },
 ] as const;

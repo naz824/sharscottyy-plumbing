@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] aspect-[4/5]">
                 {/* REAL: Sharscottyy family portrait from Yelp */}
                 <img
-                  src="https://s3-media0.fl.yelpcdn.com/bphoto/1MiQhaAPqPxsQ1kjB6ZKkQ/o.jpg"
+                  src="https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg"
                   alt="Carlos Matute Alvarado Sr., owner of Sharscottyy Plumbing"
                   className="w-full h-full object-cover"
                 />

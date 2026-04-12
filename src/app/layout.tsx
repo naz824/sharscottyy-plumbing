@@ -71,10 +71,10 @@ export default function RootLayout({
         {/* TODO: Add Google Analytics 4 */}
         {/* TODO: Add Tawk.to live chat script */}
       </head>
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
+      <body className="min-h-screen bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
         <EmergencyTicker />
         <Navigation />
-        <main className="flex-grow">{children}</main>
+        <main >{children}</main>
         <Footer />
         <MobileStickyBar />
       </body>
