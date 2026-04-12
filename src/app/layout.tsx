@@ -74,7 +74,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
         <EmergencyTicker />
         <Navigation />
-        <main >{children}</main>
+        <main>{children}</main>
         <Footer />
         <MobileStickyBar />
       </body>
