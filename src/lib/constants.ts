@@ -58,10 +58,16 @@ export const SERVICES = [
     fullDesc: "From sediment buildup caused by Miami's 383 ppm hard water to complete unit replacements, we handle all water heater brands. We install both traditional tank and modern tankless systems, ensuring code-compliant connections and proper pressure relief valve setup.",
     icon: "Flame",
     color: "bg-orange-600",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg", /* REAL: Gas water heater replacement */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg", /* REAL: Job site work */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg", alt: "Rheem water heater installation", label: "Installed", labelColor: "bg-green-600" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg", alt: "Gas water heater replacement" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/IDNXW0e0wruvlEX5x0YQtg/o.jpg", alt: "Rheem Performance water heater" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", alt: "Rheem Classic water heater install" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/mWR8RUqNgqQSdndPZPqP3A/o.jpg", alt: "Tankless water heater install" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/1OgBf04VDJ9RYErf2onhlg/o.jpg", alt: "Tankless wall mount" },
     ],
+    /* REAL: Water heater photos from Carlos's Yelp */
     features: [
       "Traditional & tankless installation",
       "Sediment flush for hard water buildup",
@@ -77,10 +83,13 @@ export const SERVICES = [
     fullDesc: "Hidden leaks in Miami homes cause slab damage, mold growth, and skyrocketing water bills. We use electronic listening devices and thermal imaging to pinpoint leaks behind walls and under slabs without destructive exploration. Early detection saves you thousands.",
     icon: "Droplet",
     color: "bg-blue-600",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/R_exCjzC7U-n8D2US7dtpg/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", /* REAL: Broken plumbing/leak */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg", /* REAL: Outdoor pipe leak */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/R_exCjzC7U-n8D2US7dtpg/o.jpg", alt: "Angle stop valve repair" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/0MfmMBYkS7CVzTyCv8Lhhg/o.jpg", alt: "Water leak repair" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/vkYm9bif4xXN98sRpo8NCw/o.jpg", alt: "Broken plumbing line" },
     ],
+    /* REAL: Leak detection/repair photos from Carlos's Yelp */
     features: [
       "Non-invasive electronic detection",
       "Slab leak specialists",
@@ -96,10 +105,14 @@ export const SERVICES = [
     fullDesc: "Miami's heavy rains and hurricane season create unique drainage challenges. We clear blockages using motorized snakes and hydro-jetting, and install backflow prevention devices to protect your home during storm season. From kitchen sinks to main sewer lines.",
     icon: "Wrench",
     color: "bg-emerald-500",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg", /* REAL: Stoppages & clogging */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", /* REAL: Pipe/drain work */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg", alt: "Clogged drain before", label: "BEFORE", labelColor: "bg-red-600" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/DCMDSC2TgUQ3Il944jSTog/o.jpg", alt: "Clean drain after", label: "AFTER", labelColor: "bg-green-600" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/baNxK2eN3pVKGe5doy4pww/o.jpg", alt: "Kitchen drain repair" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/vjphKiWaGYhxmrGht_hEiA/o.jpg", alt: "Discharge pump installation" },
     ],
+    /* REAL: Drain cleaning before/after photos from Carlos's Yelp */
     features: [
       "Motorized snake clearing",
       "Hydro-jetting for tough clogs",
@@ -115,10 +128,13 @@ export const SERVICES = [
     fullDesc: "Running toilets waste thousands of gallons per year. We repair flappers, fill valves, and wax seals, or install brand-new low-flow toilets that save water and money. All work is done cleanly and completed same-day.",
     icon: "Home",
     color: "bg-violet-500",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg", /* REAL: Toilet leak repair */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg", /* REAL: Bathroom fixture work */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg", alt: "Toilet wax seal repair" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/ua9IArVixmWxPghWkkS-1Q/o.jpg", alt: "Toilet leak repairs" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/maIEGtktEjY8y_Z8RNd4Qg/o.jpg", alt: "Toilet tank fill valve" },
     ],
+    /* REAL: Toilet repair photos from Carlos's Yelp */
     features: [
       "Running toilet repairs",
       "Wax seal replacement",
@@ -134,11 +150,15 @@ export const SERVICES = [
     fullDesc: "Planning a bathroom upgrade? We handle all the plumbing — from rough-in piping to final fixture connections. Showers, tubs, vanities, and specialty fixtures like salon backwash chairs. We coordinate with your contractor for seamless results.",
     icon: "Paintbrush",
     color: "bg-sky-500",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/H5gTNr3KWRBAugiODSSK2w/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg", /* REAL: Kitchen sink remodeling */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg", /* REAL: Toilet install */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg", /* REAL: Water heater hookup */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/H5gTNr3KWRBAugiODSSK2w/o.jpg", alt: "Roman tub faucet", label: "Installed", labelColor: "bg-green-600" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg", alt: "Kitchen sink remodel" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/DdLg_dDXz6DGqvrhLZk6Vw/o.jpg", alt: "Service sink replacement" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/VJi1uSz1lJ6HaYAeWExejQ/o.jpg", alt: "Kitchen faucet replacement" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/IAeAhj3DlokLwgbwA3Pj6w/o.jpg", alt: "Shower valve replacement" },
     ],
+    /* REAL: Bathroom remodel photos from Carlos's Yelp */
     features: [
       "Complete rough-in plumbing",
       "Shower & tub installation",
@@ -154,11 +174,12 @@ export const SERVICES = [
     fullDesc: "When disaster strikes, every minute counts. Burst pipes, sewage backups, and flooding from Miami storms need immediate attention. We respond 24/7 with the tools and expertise to stop the damage fast. No dispatch fee, even at 2 AM.",
     icon: "AlertTriangle",
     color: "bg-red-600",
+    image: "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg",
     images: [
-      "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg", /* REAL: Outdoor pipe leak emergency */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", /* REAL: Broken plumbing */
-      "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg", /* REAL: Drain/flooding issue */
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg", alt: "Emergency pipe leak before", label: "BEFORE", labelColor: "bg-red-600" },
+      { src: "https://s3-media0.fl.yelpcdn.com/bphoto/pazKEFforTXOE49nQe9JDg/o.jpg", alt: "Pipe repair after", label: "AFTER", labelColor: "bg-green-600" },
     ],
+    /* REAL: Emergency pipe repair before/after from Carlos's Yelp */
     features: [
       "24/7 availability",
       "Burst pipe emergency repair",

@@ -3,13 +3,19 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface ImageCarouselProps {
-  images: readonly string[];
+interface CarouselImage {
+  src: string;
   alt: string;
-  labels?: readonly string[];
+  label?: string;
+  labelColor?: string;
 }
 
-export default function ImageCarousel({ images, alt, labels }: ImageCarouselProps) {
+interface ImageCarouselProps {
+  images: ReadonlyArray<CarouselImage>;
+  className?: string;
+}
+
+export default function ImageCarousel({ images, className = "" }: ImageCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -27,18 +33,20 @@ export default function ImageCarousel({ images, alt, labels }: ImageCarouselProp
     return () => clearInterval(id);
   }, [paused, next, images.length]);
 
+  if (images.length === 0) return null;
+
   if (images.length === 1) {
     return (
-      <div className="relative w-full h-full">
+      <div className={`relative w-full h-full ${className}`}>
         <img
-          src={images[0]}
-          alt={alt}
+          src={images[0].src}
+          alt={images[0].alt}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
           loading="lazy"
         />
-        {labels?.[0] && (
-          <span className="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded tracking-wider z-10">
-            {labels[0]}
+        {images[0].label && (
+          <span className={`absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded-full text-white z-10 ${images[0].labelColor || "bg-blue-600"}`}>
+            {images[0].label}
           </span>
         )}
       </div>
@@ -47,17 +55,17 @@ export default function ImageCarousel({ images, alt, labels }: ImageCarouselProp
 
   return (
     <div
-      className="relative w-full h-full"
+      className={`relative w-full h-full ${className}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Slide images */}
+      {/* Stacked images with opacity crossfade */}
       <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-700 ease-in-out">
-        {images.map((src, i) => (
+        {images.map((img, i) => (
           <img
-            key={src}
-            src={src}
-            alt={i === 0 ? alt : ""}
+            key={img.src}
+            src={img.src}
+            alt={i === 0 ? img.alt : ""}
             aria-hidden={i !== current}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
               i === current ? "opacity-100" : "opacity-0"
@@ -67,27 +75,29 @@ export default function ImageCarousel({ images, alt, labels }: ImageCarouselProp
         ))}
       </div>
 
-      {/* BEFORE/AFTER label */}
-      {labels?.[current] && (
-        <span className="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2 py-1 rounded tracking-wider z-10">
-          {labels[current]}
+      {/* BEFORE/AFTER or status label */}
+      {images[current].label && (
+        <span className={`absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded-full text-white z-10 ${images[current].labelColor || "bg-blue-600"}`}>
+          {images[current].label}
         </span>
       )}
 
-      {/* Prev / Next arrows — visible on group-hover */}
+      {/* Prev arrow */}
       <button
         onClick={(e) => { e.preventDefault(); e.stopPropagation(); prev(); }}
+        type="button"
         className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-black/40 hover:bg-black/65 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-label="Previous image"
-        type="button"
       >
         <ChevronLeft className="w-4 h-4" />
       </button>
+
+      {/* Next arrow */}
       <button
         onClick={(e) => { e.preventDefault(); e.stopPropagation(); next(); }}
+        type="button"
         className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-black/40 hover:bg-black/65 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-label="Next image"
-        type="button"
       >
         <ChevronRight className="w-4 h-4" />
       </button>

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Flame, Droplet, Wrench, Home, AlertTriangle, Paintbrush, ArrowRight, PhoneCall } from "lucide-react";
+import ImageCarousel from "@/components/ImageCarousel";
 import { SERVICES, BUSINESS } from "@/lib/constants";
 import { generatePageMetadata, generateBreadcrumbJsonLd } from "@/lib/metadata";
-import ImageCarousel from "@/components/ImageCarousel";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -50,10 +50,7 @@ export default function ServicesPage() {
                 <Link key={service.slug} href={`/services/${service.slug}`} className="group">
                   <article className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,112,184,0.12)] hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
                     <div className="h-56 overflow-hidden relative">
-                      <ImageCarousel
-                        images={service.images}
-                        alt={`${service.title} service in Miami`}
-                      />
+                      <ImageCarousel images={service.images} />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
                       <div className={`absolute bottom-4 left-6 ${service.color} text-white p-3 rounded-2xl shadow-lg`}>
                         <IconComp className="w-6 h-6" aria-hidden="true" />

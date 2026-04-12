@@ -250,10 +250,7 @@ export default function HomePage() {
                   <Link key={service.slug} href={`/services/${service.slug}`} className="group">
                     <article className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,112,184,0.12)] hover:-translate-y-1 transition-all duration-500">
                       <div className="h-56 overflow-hidden relative">
-                        <ImageCarousel
-                          images={service.images}
-                          alt={`${service.title} service in Miami by Sharscottyy Plumbing`}
-                        />
+                        <ImageCarousel images={service.images} />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent pointer-events-none z-10" />
                         <div className={`absolute bottom-4 left-6 ${service.color} text-white p-3 rounded-2xl shadow-lg z-20`}>
                           <IconComp className="w-6 h-6" aria-hidden="true" />
@@ -276,28 +273,6 @@ export default function HomePage() {
           </div>
         </section>
       </AnimateOnScroll>
-
-      {/* CARLOS'S PROMISE */}
-      <section className="py-16 bg-orange-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-            <img
-              src="https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg"
-              alt="Carlos Matute Alvarado Sr., Owner of Sharscottyy Plumbing"
-              className="w-24 h-24 rounded-full object-cover border-4 border-white/30 shrink-0"
-            />
-            <blockquote className="flex-1">
-              <p className="text-2xl md:text-3xl font-black text-white italic leading-snug mb-4">
-                &ldquo;I built this business on one rule: show up, be honest, and fix it right — the first time.&rdquo;
-              </p>
-              <footer>
-                <p className="font-black text-white text-lg">Carlos Matute Alvarado Sr.</p>
-                <p className="text-orange-100 font-medium">Owner &middot; {BUSINESS.experienceYears} Years Experience &middot; Sharscottyy Plumbing</p>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
 
       {/* COST ESTIMATOR */}
       <AnimateOnScroll>
