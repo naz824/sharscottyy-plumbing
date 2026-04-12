@@ -60,6 +60,10 @@ export const SERVICES = [
     color: "bg-orange-600",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg",
     /* REAL: Gas water heater replacement from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg", alt: "Gas water heater replacement by Sharscottyy Plumbing in Miami" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg", alt: "Water heater installation completed by Carlos in Miami" },
+    ],
     features: [
       "Traditional & tankless installation",
       "Sediment flush for hard water buildup",
@@ -77,6 +81,10 @@ export const SERVICES = [
     color: "bg-blue-600",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg",
     /* REAL: Broken plumbing/leak from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", alt: "Hidden pipe leak detected behind wall in Miami home" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg", alt: "Leak repair completed — pipes fully restored by Sharscottyy Plumbing" },
+    ],
     features: [
       "Non-invasive electronic detection",
       "Slab leak specialists",
@@ -94,6 +102,10 @@ export const SERVICES = [
     color: "bg-emerald-500",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg",
     /* REAL: Stoppages & clogging from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/9jwKeS71-MNrpbywxIE6cQ/o.jpg", alt: "Severely clogged drain before Sharscottyy cleaning", label: "BEFORE" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/WbLkygjQO_ECZY4WKEgSEg/o.jpg", alt: "Drain fully cleared and flowing after Sharscottyy service", label: "AFTER" },
+    ],
     features: [
       "Motorized snake clearing",
       "Hydro-jetting for tough clogs",
@@ -111,6 +123,10 @@ export const SERVICES = [
     color: "bg-violet-500",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg",
     /* REAL: Toilet leak repair from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/ZSyvzZN3nEREtFnU8J1vMQ/o.jpg", alt: "Toilet leak repair by Sharscottyy Plumbing in Miami" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg", alt: "New toilet installation completed same-day in Miami" },
+    ],
     features: [
       "Running toilet repairs",
       "Wax seal replacement",
@@ -128,6 +144,10 @@ export const SERVICES = [
     color: "bg-sky-500",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg",
     /* REAL: Kitchen sink remodeling from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/REPZDVDc-Eo-HrQPUts2rA/o.jpg", alt: "Bathroom and kitchen remodel plumbing by Sharscottyy in Miami" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg", alt: "Complete bathroom plumbing rough-in and fixture installation" },
+    ],
     features: [
       "Complete rough-in plumbing",
       "Shower & tub installation",
@@ -145,6 +165,10 @@ export const SERVICES = [
     color: "bg-red-600",
     image: "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg",
     /* REAL: Outdoor pipe leak emergency from Carlos's Yelp */
+    images: [
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/OBTtxqU9p2RYc6AsqbG1zw/o.jpg", alt: "Burst outdoor pipe emergency in Miami — called Sharscottyy at 2AM", label: "BEFORE" },
+      { url: "https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg", alt: "Emergency pipe repair completed — leak fully stopped by Sharscottyy", label: "AFTER" },
+    ],
     features: [
       "24/7 availability",
       "Burst pipe emergency repair",
