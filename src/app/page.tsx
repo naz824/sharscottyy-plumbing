@@ -11,6 +11,8 @@ import BackToTop from "@/components/BackToTop";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import CostEstimator from "@/components/CostEstimator";
 import ImageCarousel from "@/components/ImageCarousel";
+import ReviewTicker from "@/components/ReviewTicker";
+import EmergencyChecker from "@/components/EmergencyChecker";
 import { BUSINESS, SERVICES, TESTIMONIALS, FAQS } from "@/lib/constants";
 import { generateFaqJsonLd } from "@/lib/metadata";
 
@@ -207,6 +209,9 @@ export default function HomePage() {
         </section>
       </AnimateOnScroll>
 
+      {/* EMERGENCY CHECKER */}
+      <EmergencyChecker />
+
       {/* CARLOS PROMISE QUOTE */}
       <AnimateOnScroll>
         <section className="py-20 bg-slate-900">
@@ -390,6 +395,9 @@ export default function HomePage() {
           </div>
         </section>
       </AnimateOnScroll>
+
+      {/* REVIEW TICKER */}
+      <ReviewTicker />
 
       {/* FAQ */}
       <AnimateOnScroll>

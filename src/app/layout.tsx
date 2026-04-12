@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import EmergencyTicker from "@/components/EmergencyTicker";
+import ReadingProgress from "@/components/ReadingProgress";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
@@ -73,6 +74,7 @@ export default function RootLayout({
         {/* TODO: Add Tawk.to live chat script */}
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
+        <ReadingProgress />
         <EmergencyTicker />
         <Navigation />
         <main>{children}</main>
