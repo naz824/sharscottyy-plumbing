@@ -11,16 +11,19 @@ export default function MobileStickyBar() {
     >
       <a
         href={`tel:${BUSINESS.phoneRaw}`}
-        className="flex-1 bg-orange-600 text-white py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-[0_10px_40px_rgba(234,88,12,0.3)] active:scale-95 transition-transform"
+        className="bg-orange-600 text-white py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-[0_10px_40px_rgba(234,88,12,0.3)] active:scale-95 transition-transform"
+        style={{ flex: "0 0 65%" }}
         aria-label="Call Now"
       >
-        <PhoneCall className="w-5 h-5" aria-hidden="true" /> Call Now
+        <PhoneCall className="w-5 h-5" aria-hidden="true" />
+        <span className="text-base">(786) 678-8138</span>
       </a>
       <a
         href={BUSINESS.whatsapp}
         target="_blank"
         rel="noreferrer"
-        className="flex-1 bg-emerald-500 text-white py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg active:scale-95 transition-transform"
+        className="bg-emerald-500 text-white py-3.5 rounded-xl font-bold flex justify-center items-center gap-2 shadow-lg active:scale-95 transition-transform"
+        style={{ flex: "0 0 35%" }}
         aria-label="Message on WhatsApp"
       >
         <MessageCircle className="w-5 h-5" aria-hidden="true" /> WhatsApp
