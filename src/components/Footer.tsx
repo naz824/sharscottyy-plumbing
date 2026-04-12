@@ -9,15 +9,24 @@ export default function Footer() {
     <footer className="bg-slate-950 text-slate-300 pt-20 pb-28 md:pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top CTA Band */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-500 rounded-3xl p-8 md:p-12 -mt-32 mb-16 shadow-[0_20px_50px_rgba(234,88,12,0.3)] relative overflow-hidden">
+        <div className="bg-gradient-to-r from-orange-600 via-orange-500 to-red-500 rounded-3xl p-8 md:p-12 -mt-32 mb-16 shadow-[0_20px_50px_rgba(234,88,12,0.4)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-2">
-                Need a Plumber Right Now?
-              </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="relative inline-flex items-center justify-center">
+                  <span className="absolute w-8 h-8 rounded-full bg-white/30 animate-ping" aria-hidden="true" />
+                  <PhoneCall className="relative w-6 h-6 text-white" aria-hidden="true" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-white">
+                  Need a Plumber Right Now?
+                </h3>
+              </div>
               <p className="text-orange-100 font-medium">
                 Free visit. No dispatch fee. Available 24/7 for emergencies.
+              </p>
+              <p className="text-white/80 text-sm font-semibold mt-1">
+                We respond in under 30 minutes.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">

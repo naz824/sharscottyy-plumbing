@@ -16,7 +16,7 @@ export default function MobileStickyBar() {
         aria-label="Call Now"
       >
         <PhoneCall className="w-5 h-5" aria-hidden="true" />
-        <span className="text-base">(786) 678-8138</span>
+        <span className="text-base">Call or Text</span>
       </a>
       <a
         href={BUSINESS.whatsapp}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 interface FaqItem {
   question: string;
@@ -18,7 +18,11 @@ export default function FaqAccordion({ faqs }: { faqs: FaqItem[] }) {
         return (
           <div
             key={idx}
-            className="border border-slate-200 rounded-2xl bg-white overflow-hidden shadow-sm"
+            className={`border rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-200 ${
+              isOpen
+                ? "border-orange-200 border-l-4 border-l-orange-500"
+                : "border-slate-200"
+            }`}
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : idx)}
@@ -27,12 +31,17 @@ export default function FaqAccordion({ faqs }: { faqs: FaqItem[] }) {
               aria-controls={`faq-panel-${idx}`}
             >
               <span className="pr-4">{faq.question}</span>
-              <ChevronDown
-                className={`w-5 h-5 text-orange-600 shrink-0 transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-                aria-hidden="true"
-              />
+              {isOpen ? (
+                <Minus
+                  className="w-5 h-5 text-orange-600 shrink-0"
+                  aria-hidden="true"
+                />
+              ) : (
+                <Plus
+                  className="w-5 h-5 text-orange-600 shrink-0"
+                  aria-hidden="true"
+                />
+              )}
             </button>
             <div
               id={`faq-panel-${idx}`}

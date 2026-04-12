@@ -72,11 +72,11 @@ export default function RootLayout({
         {/* TODO: Add Tawk.to live chat script */}
       </head>
       <body className="min-h-screen bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
-        <EmergencyTicker />
-        <Navigation />
-        <main>{children}</main>
+        <div className="print:hidden"><EmergencyTicker /></div>
+        <div className="print:hidden"><Navigation /></div>
+        <main><div className="animate-fadeIn">{children}</div></main>
         <Footer />
-        <MobileStickyBar />
+        <div className="print:hidden"><MobileStickyBar /></div>
       </body>
     </html>
   );

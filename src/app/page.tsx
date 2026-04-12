@@ -3,17 +3,29 @@ import {
   Star, Award, ShieldCheck, Clock, MapPin, PhoneCall, MessageCircle,
   Flame, Droplet, Wrench, Home, AlertTriangle, ChevronRight, Users,
   BadgeDollarSign, Paintbrush, CheckCircle2, ArrowRight,
-  ClipboardCheck, X, Check,
+  ClipboardCheck, X, Check, Timer,
 } from "lucide-react";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import BackToTop from "@/components/BackToTop";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import ParallaxHeroBackground from "@/components/ParallaxHeroBackground";
 import { BUSINESS, SERVICES, TESTIMONIALS, FAQS } from "@/lib/constants";
 import { generateFaqJsonLd } from "@/lib/metadata";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Flame, Droplet, Wrench, Home, AlertTriangle, Paintbrush,
+};
+
+// Maps service bg color class → border color class (full strings for Tailwind JIT)
+const serviceBorderMap: Record<string, string> = {
+  "bg-orange-600": "border-orange-600",
+  "bg-blue-600": "border-blue-600",
+  "bg-emerald-500": "border-emerald-500",
+  "bg-violet-500": "border-violet-500",
+  "bg-sky-500": "border-sky-500",
+  "bg-red-600": "border-red-600",
 };
 
 export default function HomePage() {
@@ -29,22 +41,15 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-blue-950">
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg"
-            alt=""
-            className="w-full h-full object-cover opacity-25"
-            aria-hidden="true"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-950/90 to-blue-900/40" />
+          <ParallaxHeroBackground src="https://s3-media0.fl.yelpcdn.com/bphoto/a8PW0eKssQ8U9ZDjPlY5yg/o.jpg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 text-center lg:text-left pt-10 md:pt-0">
-            {/* FIX 9: Added platform names to review badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-900/60 backdrop-blur-md text-blue-50 rounded-full font-bold text-sm mb-6 border border-blue-500/30 shadow-lg">
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" aria-hidden="true" />
-              {BUSINESS.reviews.averageRating} Stars · {BUSINESS.reviews.total}+ Verified Reviews
+              {BUSINESS.reviews.averageRating} Stars ·{" "}
+              <AnimatedCounter target={BUSINESS.reviews.total} suffix="+" /> Verified Reviews
               <span className="text-blue-300 font-normal">on Google, Yelp &amp; Porch</span>
             </div>
 
@@ -56,10 +61,15 @@ export default function HomePage() {
               .
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-blue-100 mb-4 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
               {BUSINESS.experienceYears} years of experience. Zero dispatch fees. Stop paying corporate
               franchises $99–$150 just to diagnose your problem — our visit and quote are{" "}
               <strong className="text-white">completely free</strong>.
+            </p>
+
+            <p className="flex items-center gap-1.5 justify-center lg:justify-start text-sm text-orange-300 font-bold mb-6">
+              <Timer className="w-4 h-4" aria-hidden="true" />
+              Average response: under 30 minutes
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
@@ -105,10 +115,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TRUST BAR — FIX 5: Carlos headshot as first item */}
+      {/* TRUST BAR */}
       <section className="bg-white py-6 border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 lg:gap-10">
             <div className="flex items-center gap-3">
               <img
                 src="https://s3-media0.fl.yelpcdn.com/bphoto/DY7KT-3WFaZUpsY5qE3yFw/o.jpg"
@@ -136,8 +146,8 @@ export default function HomePage() {
                 <ShieldCheck className="w-6 h-6 text-blue-600" aria-hidden="true" />
               </div>
               <div>
-                <p className="font-black text-slate-900">Honest Pricing</p>
-                <p className="text-sm text-slate-500">Pay only for approved work</p>
+                <p className="font-black text-slate-900">Satisfaction Guaranteed</p>
+                <p className="text-sm text-slate-500">100% or we make it right</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-10 bg-slate-200" aria-hidden="true" />
@@ -146,15 +156,27 @@ export default function HomePage() {
                 <Star className="w-6 h-6 text-orange-600 fill-orange-600" aria-hidden="true" />
               </div>
               <div>
-                <p className="font-black text-slate-900">{BUSINESS.reviews.total}+ Reviews</p>
+                <p className="font-black text-slate-900">
+                  <AnimatedCounter target={BUSINESS.reviews.total} suffix="+" /> Reviews
+                </p>
                 <p className="text-sm text-slate-500">5.0 star average</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-10 bg-slate-200" aria-hidden="true" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center">
+                <Timer className="w-6 h-6 text-slate-600" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-black text-slate-900">&lt; 30 Min Response</p>
+                <p className="text-sm text-slate-500">Average arrival time</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS — FIX 4 */}
+      {/* HOW IT WORKS */}
       <AnimateOnScroll>
         <section className="py-24 bg-blue-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -165,7 +187,6 @@ export default function HomePage() {
               </h2>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Connecting lines on desktop */}
               <div
                 className="hidden md:block absolute h-0.5 bg-white/20 z-0"
                 style={{ top: "6.75rem", left: "20%", right: "20%" }}
@@ -223,9 +244,10 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {SERVICES.map((service) => {
                 const IconComp = iconMap[service.icon] || Wrench;
+                const borderColor = serviceBorderMap[service.color] ?? "border-orange-600";
                 return (
                   <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                    <article className="rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,112,184,0.12)] hover:-translate-y-1 transition-all duration-500">
+                    <article className={`rounded-3xl overflow-hidden bg-white border border-slate-100 border-b-4 ${borderColor} shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(8,112,184,0.12)] hover:-translate-y-1 transition-all duration-500`}>
                       <div className="h-56 overflow-hidden relative">
                         <img
                           src={service.image}
@@ -234,8 +256,19 @@ export default function HomePage() {
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
-                        <div className={`absolute bottom-4 left-6 ${service.color} text-white p-3 rounded-2xl shadow-lg`}>
+                        <div className={`absolute bottom-4 left-6 ${service.color} text-white p-3 rounded-2xl shadow-lg z-10`}>
                           <IconComp className="w-6 h-6" aria-hidden="true" />
+                        </div>
+                        {/* Hover-reveal feature list */}
+                        <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out bg-gradient-to-t from-slate-900/95 via-slate-900/90 to-slate-900/70 p-4 pt-8 z-10">
+                          <ul className="space-y-1.5">
+                            {service.features.slice(0, 3).map((f) => (
+                              <li key={f} className="flex items-center gap-2 text-white text-xs font-medium">
+                                <Check className="w-3 h-3 text-green-400 shrink-0" aria-hidden="true" />
+                                {f}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
                       <div className="p-8 pt-6">
@@ -244,7 +277,8 @@ export default function HomePage() {
                         </h3>
                         <p className="text-slate-600 mb-4 leading-relaxed font-medium">{service.shortDesc}</p>
                         <span className="inline-flex items-center gap-1 text-orange-600 font-bold text-sm group-hover:gap-2 transition-all">
-                          Learn More <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                          Learn More{" "}
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                         </span>
                       </div>
                     </article>
@@ -256,7 +290,7 @@ export default function HomePage() {
         </section>
       </AnimateOnScroll>
 
-      {/* THE HONEST DIFFERENCE — FIX 2 + FIX 7: Combined trust cards + Us vs. Them */}
+      {/* THE HONEST DIFFERENCE */}
       <AnimateOnScroll>
         <section id="comparison" className="py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -272,7 +306,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Trust Cards (moved from Why Us) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               {[
                 { icon: Award, title: `${BUSINESS.experienceYears} Years Experience`, desc: "Experienced, insured plumber with two decades of honest service across Miami-Dade." },
@@ -290,9 +323,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Us vs. Them */}
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {/* Other Miami Plumbers */}
               <div className="bg-red-50 border border-red-100 rounded-3xl p-8">
                 <h3 className="text-xl font-black text-red-700 mb-6 text-center">Other Miami Plumbers</h3>
                 <ul className="space-y-4">
@@ -311,7 +342,6 @@ export default function HomePage() {
                   ))}
                 </ul>
               </div>
-              {/* Sharscottyy Plumbing */}
               <div className="bg-green-50 border border-green-200 rounded-3xl p-8 shadow-lg">
                 <h3 className="text-xl font-black text-green-700 mb-6 text-center">Sharscottyy Plumbing</h3>
                 <ul className="space-y-4">
